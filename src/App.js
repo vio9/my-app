@@ -1,8 +1,11 @@
-import Card from "../src/components/Card";
+import CardsList from "./components/CardsList";
+import "./App.scss";
+import Header from "./components/Header";
 function App() {
 	return (
 		<div className="App">
-			<Card />
+			<Header />
+			<CardsList />
 		</div>
 	);
 }

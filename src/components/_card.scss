@@ -1,0 +1,14 @@
+.character-wrapper {
+	display: flex;
+	flex-direction: column;
+	width: 30%;
+	background-color: #d2e7f7;
+	border: #f3f7fc 1px solid;
+	margin: 10px 10px;
+	padding: 20px;
+	border-radius: 10px;
+	font-family: arial, Helvetica, sans-serif;
+	.cw-img {
+		width: 40%;
+	}
+}
