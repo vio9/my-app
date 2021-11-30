@@ -4,6 +4,11 @@ import { useEffect, useState } from "react";
 
 export default function CardsList() {
 	const [characters, setCharacters] = useState([]);
+	const [starkOnly, setStartOnly] = useState(false);
+
+	function starckOnlyClick() {
+		setStartOnly(!starkOnly);
+	}
 
 	const getQuote = async () => {
 		try {
@@ -22,10 +27,19 @@ export default function CardsList() {
 	}, []);
 
 	return (
-		<div className="cardlist-wrapper">
-			{characters.map((character) => (
-				<Card {...character} />
-			))}
-		</div>
+		<>
+			<div className="wrap-button">
+				<button className="button-choice" onClick={starckOnlyClick}>
+					get stark
+				</button>
+			</div>
+			<div className="cardlist-wrapper">
+				{characters
+					.filter((chara) => !starkOnly || chara.lastName.includes("Star"))
+					.map((character) => (
+						<Card {...character} />
+					))}
+			</div>
+		</>
 	);
 }
